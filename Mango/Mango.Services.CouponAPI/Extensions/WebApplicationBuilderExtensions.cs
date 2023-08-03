@@ -6,7 +6,7 @@ namespace Mango.Services.CouponAPI.Extensions
 {
     public static class WebApplicationBuilderExtensions
     {
-        public static WebApplicationBuilder AddAppAuthetication(this WebApplicationBuilder builder)
+        public static WebApplicationBuilder AddAppAuthentication(this WebApplicationBuilder builder)
         {
             var settingsSection = builder.Configuration.GetSection("ApiSettings");
 

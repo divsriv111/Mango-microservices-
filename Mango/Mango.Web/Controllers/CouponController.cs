@@ -2,7 +2,6 @@
 using Mango.Web.Service.IService;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 
 namespace Mango.Web.Controllers
 {
@@ -23,7 +22,7 @@ namespace Mango.Web.Controllers
 
             if (response != null && response.IsSuccess)
             {
-                list= JsonConvert.DeserializeObject<List<CouponDto>>(Convert.ToString(response.Result));
+                list = JsonConvert.DeserializeObject<List<CouponDto>>(Convert.ToString(response.Result));
             }
             else
             {
@@ -60,13 +59,13 @@ namespace Mango.Web.Controllers
 
         public async Task<IActionResult> CouponDelete(int couponId)
         {
-			ResponseDto? response = await _couponService.GetCouponByIdAsync(couponId);
+            ResponseDto? response = await _couponService.GetCouponByIdAsync(couponId);
 
-			if (response != null && response.IsSuccess)
-			{
-				CouponDto? model= JsonConvert.DeserializeObject<CouponDto>(Convert.ToString(response.Result));
+            if (response != null && response.IsSuccess)
+            {
+                CouponDto? model = JsonConvert.DeserializeObject<CouponDto>(Convert.ToString(response.Result));
                 return View(model);
-			}
+            }
             else
             {
                 TempData["error"] = response?.Message;

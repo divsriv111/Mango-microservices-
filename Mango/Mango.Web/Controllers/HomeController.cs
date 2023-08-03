@@ -1,6 +1,4 @@
 ﻿using Mango.Web.Models;
-using Mango.Web.Utility;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -19,7 +17,7 @@ namespace Mango.Web.Controllers
         {
             return View();
         }
-        
+
         public IActionResult Privacy()
         {
             return View();

@@ -1,6 +1,5 @@
 ﻿using Mango.Services.AuthAPI.Models.Dto;
 using Mango.Services.AuthAPI.Service.IService;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mango.Services.AuthAPI.Controllers
@@ -27,10 +26,10 @@ namespace Mango.Services.AuthAPI.Controllers
             if (!string.IsNullOrEmpty(errorMessage))
             {
                 _response.IsSuccess = false;
-                _response.Message= errorMessage;
+                _response.Message = errorMessage;
                 return BadRequest(_response);
             }
-                return Ok(_response);
+            return Ok(_response);
         }
 
         [HttpPost("login")]
@@ -51,7 +50,7 @@ namespace Mango.Services.AuthAPI.Controllers
         [HttpPost("AssignRole")]
         public async Task<IActionResult> AssignRole([FromBody] RegistrationRequestDto model)
         {
-            var assignRoleSuccessful = await _authService.AssignRole(model.Email,model.Role.ToUpper());
+            var assignRoleSuccessful = await _authService.AssignRole(model.Email, model.Role.ToUpper());
             if (!assignRoleSuccessful)
             {
                 _response.IsSuccess = false;

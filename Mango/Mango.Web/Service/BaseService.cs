@@ -13,7 +13,7 @@ namespace Mango.Web.Service
         private readonly ITokenProvider _tokenProvider;
         public BaseService(IHttpClientFactory httpClientFactory, ITokenProvider tokenProvider)
         {
-                _httpClientFactory = httpClientFactory;
+            _httpClientFactory = httpClientFactory;
             _tokenProvider = tokenProvider;
         }
 
@@ -72,7 +72,8 @@ namespace Mango.Web.Service
                         var apiResponseDto = JsonConvert.DeserializeObject<ResponseDto>(apiContent);
                         return apiResponseDto;
                 }
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 var dto = new ResponseDto
                 {
