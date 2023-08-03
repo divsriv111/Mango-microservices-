@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Mango.Services.AuthAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class addidentitytables : Migration
+    public partial class addIDentityTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

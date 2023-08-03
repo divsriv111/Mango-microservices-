@@ -10,7 +10,8 @@ namespace Mango.Services.CouponAPI
         {
             var mappingConfig = new MapperConfiguration(config =>
             {
-                config.CreateMap<Coupon, CouponDto>().ReverseMap();
+                config.CreateMap<CouponDto, Coupon>();
+                config.CreateMap<Coupon, CouponDto>();
             });
             return mappingConfig;
         }

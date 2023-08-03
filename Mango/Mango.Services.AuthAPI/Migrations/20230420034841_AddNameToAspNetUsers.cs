@@ -5,7 +5,7 @@
 namespace Mango.Services.AuthAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class addnametodefaulttable : Migration
+    public partial class AddNameToAspNetUsers : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
