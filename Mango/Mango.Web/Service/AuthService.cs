@@ -34,13 +34,12 @@ namespace Mango.Web.Service
 
         public async Task<ResponseDto?> RegisterAsync(RegistrationRequestDto registrationRequestDto)
         {
-            var a =  await _baseService.SendAsync(new RequestDto()
+            return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.POST,
                 Data = registrationRequestDto,
                 Url = SD.AuthAPIBase + "/api/auth/register"
             }, withBearer: false);
-            return a;
         }
     }
 }
